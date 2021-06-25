@@ -4,7 +4,7 @@
   "description": "API for the Brainhub test task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "node",
@@ -16,5 +16,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.12.14"
+  },
+  "devDependencies": {
+    "jest": "^27.0.5",
+    "mockingoose": "^2.15.2"
   }
 }
