@@ -19,6 +19,6 @@ mongoose.connect('mongodb://localhost:27017/event-manager',
 
 app.use('/', router)
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000')
+app.listen(4000, () => {
+    console.log('Listening on port 4000')
 })
