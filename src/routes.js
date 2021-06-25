@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const controller = require('./controllers')
 
-router.post('/submit', controller.submitEvent)
+router.post('/events', controller.submitEvent)
+
+router.get('/events', controller.getEvents)
 
 module.exports = router

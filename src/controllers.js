@@ -3,7 +3,6 @@ const Event = require('./models/event.model')
 module.exports = {
     submitEvent: async (req, res) => {
 
-        
         const event = new Event({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -19,8 +18,17 @@ module.exports = {
         catch(err) {
             console.log(err)
             res.status(500).send({errors: err.errors})
-        }
+        }        
+    },
 
-        
+    getEvents: async(req, res) => {
+        try{
+            const allEvents = await Event.find();
+            res.status(200).json(allEvents)
+        }
+        catch(err) {
+            console.log(err)
+            res.status(500).send('Could not retrieve events')
+        }
     }
 }
