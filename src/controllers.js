@@ -12,7 +12,7 @@ module.exports = {
 
         try {
             await event.save()
-            res.status(200).send('Event created')
+            res.status(200).json(event._id)
             
         }
         catch(err) {
