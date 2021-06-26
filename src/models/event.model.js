@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: [true, 'First name is required']
     },
     lastName: {
         type: String,
-        required: true
+        required: [true, 'Last name is required']
     },
     email: {
         type: String,
@@ -22,7 +22,7 @@ const eventSchema = new Schema({
     },
     eventDate: {
         type: Date,
-        required: true
+        required: [true, 'Valid date is required']
     }
 })
 
