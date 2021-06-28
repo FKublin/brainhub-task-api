@@ -8,7 +8,7 @@ afterEach(async () => await db.clearDB())
 
 afterAll(async () => await db.close())
 
-test('Creates an event', async () => {
+test('Responds with status code 200 after saving an event', async () => {
     const mockRequest = httpMocks.createRequest({
         method: 'POST',
         url: '/events',
@@ -27,6 +27,22 @@ test('Creates an event', async () => {
     //const actualResponse = JSON.parse(mockResponse._getData())
     
     expect(mockResponse.statusCode).toEqual(200)
+})
+
+test('Responds with status code 500 after failing to save an event', async () => {
+    const mockRequest = httpMocks.createRequest({
+        method: 'POST',
+        url: '/events',
+        body: {}
+    })
+
+    const mockResponse = httpMocks.createResponse()
+
+    await controller.submitEvent(mockRequest, mockResponse)
+
+    //const actualResponse = JSON.parse(mockResponse._getData())
+    
+    expect(mockResponse.statusCode).toEqual(500)
 })
 
 test('Fetches created events', async () => {
