@@ -11,7 +11,9 @@ module.exports = {
         })
 
         try {
+            
             await event.save()
+            console.log(event)
             res.status(200).json(event._id)
             
         }
