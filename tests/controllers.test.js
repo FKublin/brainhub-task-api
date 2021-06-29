@@ -23,8 +23,6 @@ test('Responds with status code 200 after saving an event', async () => {
     const mockResponse = httpMocks.createResponse()
 
     await controller.submitEvent(mockRequest, mockResponse)
-
-    //const actualResponse = JSON.parse(mockResponse._getData())
     
     expect(mockResponse.statusCode).toEqual(200)
 })
@@ -39,8 +37,6 @@ test('Responds with status code 500 after failing to save an event', async () =>
     const mockResponse = httpMocks.createResponse()
 
     await controller.submitEvent(mockRequest, mockResponse)
-
-    //const actualResponse = JSON.parse(mockResponse._getData())
     
     expect(mockResponse.statusCode).toEqual(500)
 })
